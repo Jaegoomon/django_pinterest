@@ -1,0 +1,17 @@
+.pinterest_logo {
+  font-family: "Pacifico", cursive;
+}
+
+.pinterest_header {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.pinterest_footer_button {
+  font-size: 0.6rem;
+}
+
+.pinterest_footer {
+  text-align: center;
+  margin-top: 2rem;
+}
