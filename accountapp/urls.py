@@ -3,7 +3,7 @@ from re import template
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path, include
 
-from accountapp.views import AccountCreateView, hello_world
+from accountapp.views import AccountCreateView, hello_world, AccountDetailView
 
 app_name = "accountapp"
 
@@ -14,5 +14,6 @@ urlpatterns = [
          name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
 
-    path('create/', AccountCreateView.as_view(), name='create')
+    path('create/', AccountCreateView.as_view(), name='create'),
+    path('detail/<int:pk>', AccountDetailView.as_view(), name='detail')
 ]
