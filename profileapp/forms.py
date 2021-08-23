@@ -6,4 +6,4 @@ class ProfileCreationForm(ModelForm):
 
     class Meta:
         model = Profile
-        fields = ['iamge', 'nickname', 'message']
+        fields = ['image', 'nickname', 'message']
