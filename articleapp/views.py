@@ -2,7 +2,7 @@ from articleapp.decorators import article_ownership_required
 from django.forms.models import ModelForm
 from django.http.response import HttpResponse
 from django.urls.base import reverse, reverse_lazy
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 from django.views.generic.edit import DeleteView, UpdateView
 from articleapp.forms import ArticleCreationForm
 from articleapp.models import Article
@@ -66,3 +66,10 @@ class ArticleDeleteView(DeleteView):
     context_object_name = "target_article"
     template_name = "articleapp/delete.html"
     success_url = reverse_lazy("articleapp:list")
+
+
+class ArticleListView(ListView):
+    model = Article
+    context_object_name = 'article_list'
+    template_name = 'articleapp/list.html'
+    paginate_by = 7

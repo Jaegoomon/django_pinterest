@@ -2,34 +2,37 @@
 
 {% block content %}
 
-<div>
-    <div style="text-align: center; max-width: 600px; margin: 4rem auto;">
-        
-        <h1>
-            {{ target_article.title }}
-        </h1>
+<div style="text-align: center; max-width: 400px; margin: 4rem auto;">
+    
+    <h1 style="margin-bottom: 1rem;">
+        {{ target_article.title }}
+    </h1>
 
-        <img src="{{ target_article.image.url }}" alt="">
+    <h4 style="margin-bottom: 1rem;">
+        {{ target_article.writer.profile.nickname }}
+    </h4>
 
-        <p>
-            {{ target_article.content }}
-        </p>
+    <img style="width: 100%; border-radius: 1rem;"
+        src="{{ target_article.image.url }}" alt="">
 
-    </div>
+    <p style="margin-top: 1rem;">
+        {{ target_article.content }}
+    </p>
 
     {% if target_article.writer == user %}
-        <div>
-            <a href="{% url 'articleapp:update' pk=target_article.pk %}" style="text-align: center">
-                <p>Update Article</p>
-            </a>
-        </div>
+        <a class="btn btn-primary rounded-pill col-3" 
+            href="{% url 'articleapp:update' pk=target_article.pk %}" style="text-align: center">
+            Update
+        </a>
 
-        <div>
-            <a href="{% url 'articleapp:delete' pk=target_article.pk %}" style="text-align: center">
-                <p>Delete Article</p>
-            </a>
-        </div>
+        <a class="btn btn-danger rounded-pill col-3" 
+            href="{% url 'articleapp:delete' pk=target_article.pk %}" style="text-align: center">
+            Delete
+        </a>
     {% endif %}
+
 </div>
+
+<hr>
 
 {% endblock content %}
