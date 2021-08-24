@@ -1,3 +1,4 @@
+from django.urls.base import reverse
 from profileapp.decorators import profile_ownership_required
 from profileapp.forms import ProfileCreationForm
 from django.shortcuts import render
@@ -36,4 +37,4 @@ class ProfileUpdateView(UpdateView):
     template_name = 'profileapp/update.html'
 
     def get_success_url(self) -> str:
-        return reverse_lazy('accountapp:detail', kwargs={'pk': self.object.user.pk})
+        return reverse('accountapp:detail', kwargs={'pk': self.object.user.pk})
