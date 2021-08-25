@@ -8,11 +8,11 @@
             {{ target_user.date_joined }}
         </p>
 
+        {% if target_user.profile %}
         <!-- IMAGE file -->
         <img src="{{ target_user.profile.image.url }}" alt="" style="height: 10rem; width: 10rem; border-radius: 20rem; margin-bottom: 2rem">
         
         <!-- DETAILS target_user -->
-        {% if target_user.profile %}
             <h2 style="font-family: NanumSquareB;">
                 {{ target_user.profile.nickname}}
                 {% if target_user == user %}
