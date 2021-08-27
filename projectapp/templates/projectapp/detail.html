@@ -11,6 +11,10 @@
     <p style="margin-top: 1rem;">
         {{ target_project.description }}
     </p>
+
+
 </div>
+
+{% include 'projectapp/snippets/list_fragment.html' with article_list=object_list %}
 
 {% endblock content %}
