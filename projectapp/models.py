@@ -10,3 +10,6 @@ class Project(models.Model):
     image = models.ImageField(upload_to='roject/', null=False)
 
     create_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return f'{self.pk} : {self.title}'
