@@ -1,0 +1,15 @@
+autopep8==1.5.7
+beautifulsoup4==4.9.3
+certifi==2021.5.30
+Django==2.2.5
+django-bootstrap4==3.0.1
+django-environ==0.4.5
+importlib-metadata==2.1.1
+Pillow==8.3.1
+pycodestyle==2.7.0
+pytz @ file:///tmp/build/80754af9/pytz_1612215392582/work
+soupsieve==2.2.1
+sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
+toml==0.10.2
+wincertstore==0.2
+zipp==3.5.0
