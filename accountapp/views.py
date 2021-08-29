@@ -25,6 +25,7 @@ class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
     template_name = 'accountapp/create.html'
+    success_url = reverse_lazy('accountapp:login')
 
 
 class AccountDetailView(DetailView, MultipleObjectMixin):
