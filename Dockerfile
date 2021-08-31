@@ -1,12 +1,23 @@
 FROM python:3.9.0
 
+RUN mkdir /root/.ssh
+
+# host to container
+ADD ./.ssh/id_rsa /root/.ssh/id_rsa
+
+RUN chmod 600 /root/.ssh/id_rsa
+
+RUN touch /root/.ssh/known_hosts
+
+RUN ssh-keyscan github.com >> /root/.ssh/know_hosts
+
 WORKDIR /home/
 
 RUN echo "testing1234"
 
-RUN git clone https://github.com/Jaegoomon/django_pinterest.git
+RUN git clone git@github.com:Jaegoomon/django_project_private.git
 
-WORKDIR /home/django_pinterest/
+WORKDIR /home/django_project_private/
 
 RUN pip install -r requirements.txt
 

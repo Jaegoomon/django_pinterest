@@ -8,6 +8,23 @@
         {{ target_article.title }}
     </h1>
 
+    <div style="height: 2rem;">
+        <a href="{% url 'likeapp:like' pk=target_article.pk  %}">
+            {% if target_article.like == 0 %}
+                <i style="vertical-align: middle; font-size: 1.2rem; color: #f77;" class="material-icons">
+                    favorite_border
+                </i>
+            {% else %}
+                <i style="vertical-align: middle; font-size: 1.2rem; color: #f77;" class="material-icons">
+                    favorite
+                </i>
+            {% endif %}
+        </a>
+        <span style="vertical-align: middle; font-size: 1.2rem;">
+            {{ target_article.like }}
+        </span>
+    </div>
+
     <h4 style="margin-bottom: 1rem;">
         {{ target_article.writer.profile.nickname }}
     </h4>
